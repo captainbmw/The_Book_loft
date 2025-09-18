@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 12px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: none;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      background: white;
+      padding: 0 4px;
+      color: #777;
+      transition: 0.2s ease;
+      pointer-events: none;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group select:focus + label,
+    .form-group select:not([value=""]) + label {
+      top: -10px;
+      left: 10px;
+      font-size: 0.85em;
+      color: #3498db;
+    }
+
+    .submit-btn {
+      background: #27ae60;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background: #219150;
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.95em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Submit Application Form</h2>
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <input type="text" name="full_name" placeholder=" " required>
+        <label>Full Name*</label>
+      </div>
+
+      <div class="form-group">
+        <select name="business_type" required>
+          <option value="" disabled selected>Select what you sell</option>
+          <option value="Books">Books</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Food">Food</option>
+          <option value="Other">Other</option>
+        </select>
+        <label>What do you sell?*</label>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" name="phone_number" placeholder=" " required>
+        <label>Phone Number*</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" placeholder=" " required>
+        <label>Email Address*</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+      <p class="note">We will ask you to confirm your phone number after you click on 'Submit'. This is just to ensure that the contact details are correct.</p>
+    </form>
+  </div>
+
+  <div class="footer">
+    Loved by thousands of successful entrepreneurs.
+  </div>
+
+</body>
+</html>

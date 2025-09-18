@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Book Loft</title>
+{%load static%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>📚 The Book Loft</h1>
+    <p>When old flames get rekinled you know it's time to renew your mind!</p>
+  </header>
+
+  <nav class="tabs">
+<a href="{% url 'pay' %}" class="buy-btn">Buy Now</a>
+<a href="{% url 'about' %}" class="about-btn">About Us</a>
+<a href="{% url 'register' %}" class="register-btn">Register Your Business</a>
+<a href="{% url 'contact' %}" class="contact-btn">Contact Us</a>
+  </nav>
+{% load static %}
+<img src="{% static 'bmw/images/logo.jpg' %}" alt="Logo">
+  <section class="search-secltion">
+    <input type="text" placeholder="Search for ISBN number..." class="search-bar">
+    <button class="search-btn">🔍</button>
+    <p class="compare-link"></p>
+  </section>
+
+  <section class="steps">
+    <div class="step">
+      <h3>🔎 SEARCH</h3>
+      <p>30+ buyback vendors</p>
+    </div>
+    <div class="step">
+      <h3>📊 COMPARE</h3>
+      <p>Prices and seller feedback</p>
+    </div>
+    <div class="step">
+      <h3>💰 SELL</h3>
+      <p>For the most money</p>
+    </div>
+<div class="listing-container">
+
+  <div class="listing-card">
+    <h3>River Between </h3>
+    <p><strong>Location:</strong> Mombasa</p>
+    <p><strong>Posted:</strong> Today at 11:49</p>
+    <p><strong>Seller:</strong> ✅ Verified</p>
+    <p><strong>Price:</strong> KSh 8,500,000</p>
+    <a href="{% url 'books_by_category'%}" class="view-btn">View Details</a>
+  </div>
+
+  <div class="listing-card">
+    <h3></h3>
+    <p><strong>Location:</strong> Nyali, Mombasa</p>
+    <p><strong>Posted:</strong> Yesterday at 17:14</p>
+    <p><strong>Seller:</strong> Verified</p>
+    <p><strong>Price:</strong> KSh 110,000</p>
+    <a href="{% url 'books_by_author'%}" class="view-btn">View Details</a>
+  </div>
+
+  <div class="listing-card">
+    <h3></h3>
+    <p><strong>Location:</strong> Nairobi, Moi Avenue</p>
+    <p><strong>Posted:</strong> Yesterday at 17:14</p>
+    <p><strong>Seller:</strong> Verified</p>
+    <p><strong>Price:</strong> KSh 1,491</p>
+    <a href="#" class="view-btn">View Details</a>
+  </div>
+
+  </section>
+
+  <section class="why-sell">
+    <h2>Why the book loft sells books?</h2>
+    <ul>
+      <li>📦 30+ vendors compete to buy your books</li>
+      <li>🔁 Compare offers with a single search</li>
+      <li>⚡ Fast, easy, and secure transactions</li>
+    </ul>
+  </section>
+
+
+<div class="social-icons">
+  <a href="https://wa.me/message/WBGST6YO6E5RG1" >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+</body>
+</html>
+

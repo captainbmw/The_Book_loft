@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    .submit-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      width: 100%;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .info {
+      margin-top: 40px;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .info p {
+      margin: 8px 0;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      <label for="name">Your Name*</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address*</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message*</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <div class="info">
+      <p><strong>Business Hours:</strong> Mon–Sat, 9am–6pm</p>
+      <p><strong>Email:</strong> support@bookbazaar.co.ke</p>
+      <p><strong>Phone:</strong> +254 712 345 678</p>
+      <p><strong>Location:</strong> Kutus, Kirinyaga County, Kenya</p>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Book Bazaar. All rights reserved.
+    </div>
+  </div>
+
+</body>
+</html>

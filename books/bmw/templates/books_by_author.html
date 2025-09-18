@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Books by Author</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .author-section {
+      margin-bottom: 50px;
+    }
+
+    .author-section h2 {
+      color: #3498db;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+    }
+
+    .book-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .book-card {
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-title {
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+
+    .book-price {
+      font-size: 0.9em;
+      color: #27ae60;
+      margin-bottom: 10px;
+    }
+
+    .buy-btn {
+ display: inline-block;
+  text-decoration: none;
+      background-color: #34b233;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .buy-btn:hover {
+      background-color: #2e9e2b;
+    }
+    .index-btn {
+ display: inline-block;
+  text-decoration: none;
+      background-color: #34b233;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .index-btn:hover {
+      background-color: #2e9e2b;
+    }
+  </style>
+</head>
+<body>
+<a href="{% url 'index' %}" class="index-btn">Home</a>
+  <div class="container">
+    <h1>Books by Author</h1>
+
+    <div class="author-section">
+      <h2>📘 Ngũgĩ wa Thiong'o</h2>
+      <div class="book-list">
+        <div class="book-card">
+          <div class="book-title">The River Between</div>
+          <div class="book-price">KSh 850</div>
+          <a href="{% url 'pay' %}" class="buy-btn">Pay with M-pesa</a>
+        </div>
+        <div class="book-card">
+          <div class="book-title">Petals of Blood</div>
+          <div class="book-price">KSh 950</div>
+         <a href="{% url 'pay' %}" class="buy-btn">Pay with M-pesa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="author-section">
+      <h2>📗 Chimamanda Ngozi Adichie</h2>
+      <div class="book-list">
+        <div class="book-card">
+          <div class="book-title">Half of a Yellow Sun</div>
+          <div class="book-price">KSh 1,200</div>
+          <a href="{% url 'pay' %}" class="buy-btn">Pay with Mpesa</a>
+        </div>
+        <div class="book-card">
+          <div class="book-title">Americanah</div>
+          <div class="book-price">KSh 1,100</div>
+          <a href="{% url 'pay' %}" class="buy-btn">Pay with M-pesa</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
